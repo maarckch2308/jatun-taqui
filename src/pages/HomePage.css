@@ -1,0 +1,301 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
+  background-color: #ffffff; /* Fondo blanco */
+}
+
+.homepage {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden; /* Asegúrate de que no haya desbordamientos */
+}
+
+/* Contenedor del slider */
+.slider-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 90vh; /* Ajusta según el diseño */
+  max-height: 50%; /* Evita que sobrepase el contenedor */
+}
+
+/* Pista del slider */
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%; /* Cambia a dinámico si es necesario */
+}
+
+/* Imágenes del slider */
+.slider-image {
+  width: 100%; /* Cada imagen ocupa el 100% del ancho del contenedor */
+  height: 100%;
+  object-fit: cover; /* Ajusta la imagen para que se vea bien */
+  flex-shrink: 0; /* Evita que las imágenes se reduzcan */
+}
+
+/* Botones de navegación */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.336);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.slider-btn.left {
+  left: 10px;
+}
+
+.slider-btn.right {
+  right: 10px;
+}
+
+.slider-btn:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* Cambia el fondo al pasar el cursor */
+  color: black; /* Cambia el color de la flecha */
+  transform: translateY(-50%) scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+.slider-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none; /* Elimina el subrayado */
+}
+
+.below-slider {
+  margin-top: 20px; /* Espaciado entre el slider y la imagen */
+  text-align: center; /* Centra la imagen */
+}
+
+.below-slider-image {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  max-width: 1200px; /* Tamaño máximo para pantallas grandes */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px; /* Opcional: bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: sombra para la imagen */
+}
+
+.history-section {
+  padding: 40px 20px; /* Espaciado interno */
+  background-color: #f9f9f9; /* Fondo claro */
+  text-align: center; /* Centra el contenido */
+}
+
+.history-title {
+  font-size: 6rem; /* Tamaño del título */
+  color: #333; /* Color del texto */
+  margin-bottom: 20px; /* Espaciado debajo del título */
+}
+
+.history-text {
+  font-size: 1.2rem; /* Tamaño del texto */
+  line-height: 1.6; /* Espaciado entre líneas */
+  color: #555; /* Color del texto */
+  margin-bottom: 30px; /* Espaciado debajo del texto */
+}
+
+.history-image {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  max-width: 800px; /* Tamaño máximo */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para la imagen */
+  margin: 0 auto; /* Centra la imagen */
+}
+
+.founders-section {
+  padding: 40px 20px; /* Espaciado interno */
+  background-color: #f9f9f9; /* Fondo claro */
+  text-align: center; /* Centra el contenido */
+}
+
+.founders-title {
+  font-size: 4rem; /* Tamaño del título */
+  color: #333; /* Color del texto */
+  margin-bottom: 20px; /* Espaciado debajo del título */
+}
+
+.founders-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.founder-item {
+  background-color: #f8f9fa;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-weight: 500;
+}
+
+.founders-image {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  max-width: 800px; /* Tamaño máximo */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para la imagen */
+  margin: 0 auto; /* Centra la imagen */
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegúrate de que esté por encima de todo */
+}
+
+.loading-logo {
+  width: 100px; /* Ajusta el tamaño del logo */
+  height: 100px;
+  animation: spin 1.5s linear infinite; /* Animación de rotación */
+}
+
+.mission-vision-section {
+  padding: 1rem 0rem;
+  background: #f9fafc; /* Fondo claro */
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.mv-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mv-card {
+  flex: 1;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.mission-card {
+  background: white;
+  border-top: 4px solid #3a86ff; /* Azul */
+}
+
+.vision-card {
+  background: white;
+  border-top: 4px solid #8338ec; /* Morado */
+}
+
+
+.mv-text {
+  color: #555;
+  line-height: 1.6;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 780px) {
+  .slider-container {
+    height: 30vh; /* Ajusta la altura del contenedor del slider */
+  }
+
+  .slider-image {
+    object-fit: cover; /* Asegúrate de que las imágenes se ajusten sin deformarse */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+  }
+
+  .below-slider-image {
+    width: 90%; /* Reduce el ancho de la imagen debajo del slider */
+    max-width: 400px; /* Tamaño máximo para pantallas pequeñas */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 0 auto; /* Centra la imagen */
+  }
+
+  .slider-track {
+    width: 100%; /* Asegúrate de que no se desborde */
+  } 
+    
+
+  .slider-btn {
+    width: 30px; /* Reduce el tamaño de los botones */
+    height: 30px;
+  }
+    /* Ajustes para Misión y Visión */
+  .mv-container {
+    flex-direction: column; /* Apila las tarjetas verticalmente */
+    gap: 1.5rem;
+    padding: 0 1rem; /* Espaciado lateral */
+  }
+
+  .mv-card {
+    padding: 1.5rem; /* Reduce el padding para móviles */
+  }
+
+  .mv-card h3 {
+    font-size: 1.5rem; /* Tamaño de título más pequeño */
+  }
+
+  .mv-text {
+    font-size: 0.95rem; /* Texto más legible en móviles */
+    text-align: left; /* Alineación natural para lectura */
+  }
+
+  .history-title, .founders-title {
+    font-size: 2rem !important; /* Reduce títulos grandes */
+  }
+
+  
+  /* Ajustes para Misión y Visión */
+  .mv-container {
+    flex-direction: column; /* Apila las tarjetas verticalmente */
+    gap: 1.5rem;
+    padding: 0 1rem; /* Espaciado lateral */
+  }
+
+  .mv-card {
+    padding: 1.5rem; /* Reduce el padding para móviles */
+  }
+
+  .mv-card h3 {
+    font-size: 1.5rem; /* Tamaño de título más pequeño */
+  }
+
+  .mv-text {
+    font-size: 0.95rem; /* Texto más legible en móviles */
+    text-align: left; /* Alineación natural para lectura */
+  }
+
+  .history-title, .founders-title {
+    font-size: 2rem !important; /* Reduce títulos grandes */
+  }
+}
